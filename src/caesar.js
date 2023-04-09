@@ -4,12 +4,32 @@
 // of the anonymous function on line 6
 
 const caesarModule = (function () {
-  // you can add any code you want within this function scope
-
   function caesar(input, shift, encode = true) {
-    // your solution code here
+    if (shift > 25 || shift < -25 || !shift || shift === 0) {
+      return false;
+    }
+    let result = "";
+    input = input.toLowerCase();
+    for (let i = 0; i < input.length; i++) {
+      let char = input[i];
+      if (char.match(/[a-z]/)) {
+        let charCode = char.charCodeAt(0);
+        let baseCode = "a".charCodeAt(0);
+        let newCode = 0;
+        if (encode === true) {
+          newCode = (charCode - baseCode + shift + 26) % 26;
+        } else {
+          newCode = (charCode - baseCode - shift + 26) % 26;
+        }
+        let newPosition = baseCode + newCode;
+        let newChar = String.fromCharCode(newPosition);
+        result += newChar;
+      } else {
+        result += char;
+      }
+    }
+    return result;
   }
-
   return {
     caesar,
   };
