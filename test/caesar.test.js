@@ -69,7 +69,7 @@ describe("caesar() submission tests", () => {
       const message = "zoo book";
       const shift = -3;
       const actual = caesar(message, shift);
-      const expected = "wll ylly";
+      const expected = "wll yllh";
 
       expect(actual).to.equal(expected);
     });
@@ -113,7 +113,7 @@ describe("caesar() submission tests", () => {
     });
 
     it("should allow for a negative shift that will shift to the left", () => {
-      const message = "wll ylly";
+      const message = "wll yllh";
       const shift = -3;
       const actual = caesar(message, shift, false);
       const expected = "zoo book";
