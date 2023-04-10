@@ -1,7 +1,7 @@
 const { expect } = require("chai");
 const { caesar } = require("../src/caesar");
 
-describe("caesar() submission tests written by Thinkful", () => {
+describe("caesar() submission tests", () => {
   describe("error handling", () => {
     it("should return false if the shift amount is 0", () => {
       const message = "zoo book";
